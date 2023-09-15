@@ -34,7 +34,9 @@ In addition, this project will include:
 
 ## WireFrames:
 [Intro Page](https://wireframe.cc/8bFHom)
+
 [Individual Team Page](https://wireframe.cc/aLuUbU)
+
 APIs/Resources:
 
 [Ball Don't Lie API](https://www.balldontlie.io/home.html#introduction)
