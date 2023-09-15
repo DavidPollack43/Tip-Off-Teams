@@ -60,7 +60,7 @@ https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/16
 
 * Data Visualization (Tentative): While D3.js is an option for creating interactive visualizations, its application will be reconsidered after understanding the complexity of the desired visualizations and gauging the learning curve. Before fully diving into D3, a consultation will be conducted to evaluate if simpler alternatives like Chart.js or Google Charts might be more appropriate given the project's scope and timeframe.
 
-* Design Considerations:
+## Design Considerations:
 
 * Consistency: A consistent design layout across player sections will ensure a seamless user experience.
 
