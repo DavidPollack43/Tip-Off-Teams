@@ -1,21 +1,10 @@
 // Imports array of teams with picture file paths to use for populateTeams()
 import teams from './logos/teamArray.js';
+// Imports function to put all logos on the index page
+import populateTeams from './scripts/teamLogic.js';
 
-//This function will create a div for each team in the above array, and create an image object
-//inside each teamDiv. After, it will make the proper children.
-function populateTeams(){
-    const teamLogoDiv = document.querySelector(".team-logos");
-    teams.forEach(team => {
-        const teamDiv = document.createElement("div");
-        teamDiv.classList.add('team-logo');
+// Gets the div where the team logos will go, will be used as a argument in populateTeams()
+const teamLogoDiv = document.querySelector(".team-logos")
 
-        const img = document.createElement('img');
-        img.src = `./src/logos/nbaLogos/${team.logo}`;
-        img.alt = team.name;
-
-        teamDiv.appendChild(img);
-        teamLogoDiv.appendChild(teamDiv);
-    })
-}
-
-populateTeams();
+//Will populate teams. See (./scripts/teamLogic.js)
+populateTeams(teamLogoDiv, teams);
