@@ -41,6 +41,11 @@
   height: auto;
   max-height: 13.5vh;
 }
+.team-logos .team-logo:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
+}
 
 h1 {
   color: white;
