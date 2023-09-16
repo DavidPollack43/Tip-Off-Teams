@@ -3,6 +3,9 @@ import teams from './logos/teamArray.js';
 // Imports function to put all logos on the index page
 import populateTeams from './scripts/teamLogic.js';
 
+import bgImage from './backgrounds/carbonFiberNBA.jpg'
+
+document.body.style.backgroundImage = `url(${bgImage})`
 // Gets the div where the team logos will go, will be used as a argument in populateTeams()
 const teamLogoDiv = document.querySelector(".team-logos")
 

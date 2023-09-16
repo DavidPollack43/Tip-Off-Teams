@@ -29,7 +29,19 @@ const config = {
           },
           'sass-loader', // compiles sass to css
         ]
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i, // this will apply to both .jpeg and .jpg files
+        use: [
+            {
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'images/'
+                }
+            }
+        ]
+    }
     ]
   },
   plugins: [new MiniCssExtractPlugin()]
