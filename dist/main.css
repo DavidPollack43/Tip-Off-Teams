@@ -13,3 +13,22 @@
 .team-selection h2 {
   margin-bottom: 20px;
 }
+
+.team-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.team-logos .team-logo {
+  width: 100px;
+  margin: 10px;
+  cursor: pointer;
+}
+.team-logos .team-logo img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: gray;
+}
