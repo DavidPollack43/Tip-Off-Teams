@@ -1,9 +1,13 @@
+//Import transition styling...used for when logo is clicked
+@import './styles/transitions.scss';
+
+// Title (Tip-Off Teams)
 .title-selection{
     text-align: center;
     padding: 0px 0;
     margin: 10px 0px 0px 0px
 }
-
+//Where all the team divs are, as well as the insturctions to select a team
 .team-selection {
     padding: 4px 0px 0px 0px;
     text-align: center;
@@ -14,6 +18,10 @@
     }
 }
 
+// Logic for every team logo. They are all flex boxes that wrap. They are 1/6 of the size of
+// the flex box so they're should be 6 per line. It scales with view height so differing 
+// view heights should not effect placement of the icons too much. The rest of the sizing is
+// up to preference. A cursor is put over the teamlogo div so that it looks like you can select it
 .team-logos{
     display: flex;
     flex-wrap: wrap;
@@ -48,15 +56,16 @@
         background-color: rgba(0, 0, 0, 0.3); 
     }
 }
-
+// Fonts for the text
 h1{
     font-family: monospace;
 }
-
 h2{
     font-family: monospace;
 }
 
+// Changes the background image so that it covers the screen, is one full image, and at the center
+// of the page
 body{
     background-size: cover;
     background-repeat: no-repeat;

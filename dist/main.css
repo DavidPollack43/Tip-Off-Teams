@@ -1,6 +1,28 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+.enlarged-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(4);
+  z-index: 1000;
+  transition: transform 2s ease-in-out, top 2s ease-in-out, left 2s ease-in-out;
+}
+
+.move-to-top-left {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  transform: scale(2);
+  transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
 .title-selection {
   text-align: center;
   padding: 0px 0;
