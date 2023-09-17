@@ -33,7 +33,7 @@ function selectTeam(){
             clone.style.width = rect.width + 'px';
             clone.style.height = rect.height + 'px';
             clone.style.top = (rect.top - 10) + 'px';
-            clone.style.left = (rect.left + 29.5) + 'px';
+            clone.style.left = (rect.left + 17) + 'px';
             clone.style.position = 'absolute';
 
             clone.classList.add('cloned');
