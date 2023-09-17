@@ -26,18 +26,21 @@ function selectTeam(){
             clonedImage.style.height = originalImage.style.height || 'auto';
             clonedImage.style.maxHeight = originalImage.style.maxHeight || '13.5vh';
 
+            const OFFSET_X = 29;
+
             clone.style.width = rect.width + 'px';
             clone.style.height = rect.height + 'px';
             clone.style.top = rect.top + 'px';
-            clone.style.left = rect.left + 'px';
+            clone.style.left = (rect.left + OFFSET_X) + 'px';
+            clone.style.position = 'absolute';
 
             clone.classList.add('cloned');
             document.body.appendChild(clone);
 
             setTimeout(() =>{
                 clone.classList.add("enlarged-logo");
-            }, 50);
-            
+            }, 500);
+
             this.classList.add('dissapear');
         });
     });
