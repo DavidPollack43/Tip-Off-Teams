@@ -4,7 +4,9 @@
     position: fixed; 
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(4);
+    transform: translate(-50%, -50%);
+    // scale(4)
+    transform-origin: center center;
     z-index: 1000;
     transition: transform 2s ease-in-out, top 2s ease-in-out, left 2s ease-in-out;
 }

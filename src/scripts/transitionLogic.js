@@ -16,7 +16,10 @@ function selectTeam(){
             teamLogos.forEach(l => l.classList.remove('enlarged-logo'));
 
             const clone = this.cloneNode(true);
+            clone.classList.remove('team-logo');
+            clone.classList.add('cloned-team-logo');
             const rect = this.getBoundingClientRect();
+            const computedStyles = window.getComputedStyle(this);
 
             const originalImage = this.querySelector('img');  // Get the original image
             const clonedImage = clone.querySelector('img');   // Get the cloned image
@@ -26,12 +29,11 @@ function selectTeam(){
             clonedImage.style.height = originalImage.style.height || 'auto';
             clonedImage.style.maxHeight = originalImage.style.maxHeight || '13.5vh';
 
-            const OFFSET_X = 29;
-
+            clone.style.margin = computedStyles.margin;
             clone.style.width = rect.width + 'px';
             clone.style.height = rect.height + 'px';
-            clone.style.top = rect.top + 'px';
-            clone.style.left = (rect.left + OFFSET_X) + 'px';
+            clone.style.top = (rect.top - 10) + 'px';
+            clone.style.left = (rect.left + 29.5) + 'px';
             clone.style.position = 'absolute';
 
             clone.classList.add('cloned');
