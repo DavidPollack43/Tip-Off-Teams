@@ -41,6 +41,11 @@ function selectTeam(){
 
             setTimeout(() =>{
                 clone.classList.add("enlarged-logo");
+                setTimeout(() =>{
+                    clone.style.top = "calc(50% - 50px)";
+                    clone.style.left = "calc(50% + 100px)";
+                    clone.style.transform = "translate(-50%, -50%) scale(4)";
+                }, 0)
             }, 500);
 
             this.classList.add('dissapear');
