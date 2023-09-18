@@ -40,6 +40,8 @@ function selectTeam(){
             clone.style.top = (rect.top - 10) + 'px'; //Temp fix/Does not work on differing screens
             clone.style.left = (rect.left + 17) + 'px'; //Temp fix/Does not work on differing screens
             clone.style.position = 'absolute';
+
+
             
             // This will put cloned class on the clone, this is so we can reference it later
             clone.classList.add('cloned');
@@ -55,6 +57,13 @@ function selectTeam(){
                     clone.style.transform = "translate(-50%, -50%) scale(4)"; // Right now top left corner in middle, puts center of logo in middle and scales it up 4
                     teamLogos.forEach(l => l.classList.add('fade-out')); // Makes each logo fade
                     selectTeam.classList.add('fade-out'); //Makes select a team fade
+
+                    setTimeout(() => {
+                        clone.classList.add("move-to-top-left");
+                        clone.style.top = "40px";
+                        clone.style.left = "60px";
+                        clone.style.transform = "scale(2)";
+                    }, 2000)
                 }, 0)
             }, 500);
 
