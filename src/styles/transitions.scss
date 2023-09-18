@@ -25,11 +25,11 @@ body .enlarged-logo{
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
-
+// Original logo will dissapear
 .dissapear{
     opacity: 0;
 }
-
+// Gives clone position absolute, positioned absolutly to parent because clone is like a child
 .cloned{
     position: absolute;
 }
