@@ -60,11 +60,17 @@ function selectTeam(){
                     clone.style.top = "40px";
                     clone.style.left = "60px";
                     clone.style.transform = "scale(2)";
+                    const teamPage = document.querySelector(".team-page");
+                    teamPage.style.display = "block";
+                    setTimeout(() =>{
+                        teamPage.style.opacity = "1";
+                    }, 50);
                 }, 2000)
             }, 0)
         }, 500);
 
-        
+        this.classList.add('dissapear');
+
         teamLogos.forEach(logo => {
             logo.removeEventListener("click", logoClickHandler);
             logo.style.cursor = "default";
