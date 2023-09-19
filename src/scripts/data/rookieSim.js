@@ -1,4 +1,4 @@
-export const BrandonMillerData = {
+export const BrandonMiller = {
     playerDetails: {
         "id": 111111,
         "first_name": "Brandon",
@@ -29,5 +29,107 @@ export const BrandonMillerData = {
         "fg_pct": 0.430,
         "fg3_pct": 0.384,
         "ft_pct": 0.86
+    }
+}
+
+export const AusarThompson = {
+    playerDetails: {
+        "id": 111113,
+        "first_name": "Ausar",
+        "last_name": "Thompson",
+        "height_feet": 6,
+        "height_inches": 7,
+        "team": {
+            "id": 9,
+            "abbreviation": "DET",
+            "city": "Detroit",
+            "conference": "East",
+            "division": "Central",
+            "full_name": "Detroit Pistons",
+            "name": "Pistons"
+        },
+        "weight_pounds": 215
+    },
+    playerStats: {
+        "games_played": 16, 
+        "player_id": 111113, 
+        "season": 2022,
+        "pts": 16.3,
+        "ast": 6.1,
+        "reb": 7.1,
+        "stl": 2.4,
+        "blk": 1.1,
+        "turnover": 3.3,
+        "fg_pct": 0.481,
+        "fg3_pct": 0.298,
+        "ft_pct": 0.66
+    }
+}
+
+export const JaraceWalker = {
+    playerDetails: {
+        "id": 111114,
+        "first_name": "Jarace",
+        "last_name": "Walker",
+        "height_feet": 6,
+        "height_inches": 8,
+        "team": {
+            "id": 12,
+            "abbreviation": "IND",
+            "city": "Indiana",
+            "conference": "East",
+            "division": "Central",
+            "full_name": "Indiana Pacers",
+            "name": "Pacers"
+        },
+        "weight_pounds": 240
+    },
+    playerStats: {
+        "games_played": 36, 
+        "player_id": 111114, 
+        "season": 2022,
+        "pts": 11.2,
+        "ast": 1.8,
+        "reb": 6.8,
+        "stl": 1.0,
+        "blk": 1.3,
+        "turnover": 1.5,
+        "fg_pct": 0.465,
+        "fg3_pct": 0.347,
+        "ft_pct": 0.66
+    }
+}
+
+export const VictorWembanyama = {
+    playerDetails: {
+        "id": 111115,
+        "first_name": "Victor",
+        "last_name": "Wembanyama",
+        "height_feet": 7,
+        "height_inches": 4,
+        "team": {
+            "id": 27,
+            "abbreviation": "SAS",
+            "city": "San Antonio",
+            "conference": "West",
+            "division": "Southwest",
+            "full_name": "San Antonio Spurs",
+            "name": "Spurs"
+        },
+        "weight_pounds": 209
+    },
+    playerStats: {
+        "games_played": 34, 
+        "player_id": 111115, 
+        "season": 2022,
+        "pts": 21.6,
+        "ast": 2.4,
+        "reb": 10.4,
+        "stl": 0.7,
+        "blk": 3.0,
+        "turnover": 2.6,
+        "fg_pct": 0.470,
+        "fg3_pct": 0.275,
+        "ft_pct": 0.83
     }
 }
