@@ -2,9 +2,14 @@ import { async } from 'regenerator-runtime';
 import * as rookies from './data/rookieSim.js';
 import { teamStartingFive } from './data/playerMapping.js';
 
+// This function will get player data based on the team selected
 async function processTeamData(teamName){
+
+    //Goes to playerMapping.js, gets the array of player id's based on teamName
     const teamData = teamStartingFive[teamName];
+    // Gets player stat divs to put in data
     const playerStatDivs = document.querySelectorAll(".player-stats");
+    //Will for now, put in each box a players name.
     if (teamData) {
         for(let i = 0; i < 5; i++){
             let playerID = teamData[i];
@@ -22,8 +27,11 @@ async function processTeamData(teamName){
     }
 }
 
+//This function handles the API
 async function fetchPlayerData(playerID){
 
+    //FIRST, checks to see if the player ID is a rookie, if they are, then we go into rookieSim.js
+    //and get that rookies stats (my own made json)
     const rookie = Object.values(rookies).find(rookie => rookie.playerDetails.id === playerID);
 
     if(rookie) {
@@ -32,10 +40,14 @@ async function fetchPlayerData(playerID){
             stats: rookie.playerStats
         });
     }
+//-------------------------------------------------------------------------------------------------
 
+    //IF not a rookie: 
+    //Establishes the URLs for both general info and playerStats
     const playerInfoURL = `https://balldontlie.io/api/v1/players/${playerID}`;
     const playerStatsURL = `https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerID}`;
 
+    //Gets general info (name, height, position, team, etc.)
     const fetchInfo = fetch(playerInfoURL).then(response => {
         if (!response.ok) {
             throw new Error('Error fetching player information');
@@ -43,6 +55,7 @@ async function fetchPlayerData(playerID){
         return response.json();
     });
 
+    //Gets stats (points, rebounds, assits, etc.)
     const fetchStats = fetch(playerStatsURL).then(response => {
         if (!response.ok){
             throw new Error('Error fetching player stats');
@@ -50,6 +63,7 @@ async function fetchPlayerData(playerID){
         return response.json();
     });
 
+    //Nifty function that will put general info and stats into one key value hash (player for general info, stats for stas info)
     return Promise.all([fetchInfo, fetchStats]).then(results => {
         const [infoData, statsData] = results;
         return {

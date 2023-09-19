@@ -77,7 +77,7 @@ function selectTeam(){
             logo.removeEventListener("click", logoClickHandler);
             logo.style.cursor = "default";
         })
-
+        //Passing the teamName from the alt as a argument to processTeamData function
         const teamName = event.target.alt;
         processTeamData(teamName);
     }
