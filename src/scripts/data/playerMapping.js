@@ -5,7 +5,7 @@
 //Pacers: 1
 //Spurs: 1
 
-const teamStartingFIve = {
+export const teamStartingFive = {
     "Hawks": [490, 334, 666656, 3547256, 83], //Trae, Dejonte, Hunter, Bey, Capela
     "Celtics": [473, 70, 434, 378, 219], //White, Brown, Tatum, Porzingis, Horford
     "Nets": [130, 61, 666679, 417, 666508], //Dinwiddie, Bridges, Johnson, Simmons, Claxton
@@ -30,7 +30,7 @@ const teamStartingFIve = {
     "Magic": [165, 196, 17896026, 38017683, 85], //Fultz, Haris, Wagner, Paolo, Carter Jr.
     "Suns": [37, 57, 356, 140, 22], //Beal, Booker, Okogie, Durant, Ayton
     "76ers": [192, 3547254, 200, 450, 145], //Harden, Maxey, Harris, PJ, Embiid
-    "Trailblazers": [278, 419, 38017690, 182, 349], //Lillard, Simons, Sharpe, Grant, Nurkic
+    "TrailBlazers": [278, 419, 38017690, 182, 349], //Lillard, Simons, Sharpe, Grant, Nurkic
     "Kings": [161, 221, 30, 38017688, 406], //Fox, Hurter, Barnes, Murray, Sabonis
     "Spurs": [3547274, 3547246, 666682, 38017699, 111115], //Jones, Vassell, Johnson, Sochan, Victor (*)
     "Raptors": [409, 18, 17896055, 416, 373], //Schorder, OG, Scottie, Pascal, Poeltl

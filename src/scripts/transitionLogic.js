@@ -1,3 +1,5 @@
+import processTeamData from './processTeamData.js';
+
 // This funciton will let the user click on a logo to go to that teams page, as well as put
 // in a cool/clean animation that will highlight the team logo and move it to the team page
 function selectTeam(){
@@ -75,11 +77,15 @@ function selectTeam(){
             logo.removeEventListener("click", logoClickHandler);
             logo.style.cursor = "default";
         })
+
+        const teamName = event.target.alt;
+        processTeamData(teamName);
     }
 
     teamLogos.forEach(logo => { //Add a event listner to each logo
         logo.addEventListener("click", logoClickHandler);
     });
+
 }
 
 export default selectTeam;
