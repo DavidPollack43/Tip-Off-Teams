@@ -3,7 +3,7 @@ import teams from './logos/teamArray.js';
 // Imports function to put all logos on the index page
 import populateTeams from './scripts/teamLogic.js';
 // Imports the picture for background use
-import bgImage from './backgrounds/carbonFiberNBAWhite.jpg'
+import bgImage from '../src/backgrounds/carbonFiberNBAWhite.jpg'
 document.body.style.backgroundImage = `url(${bgImage})`
 
 import selectTeam from './scripts/transitionLogic.js';
