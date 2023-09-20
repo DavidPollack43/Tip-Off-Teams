@@ -44,19 +44,28 @@ async function fetchPlayerData(playerID){
 
     //IF not a rookie: 
     //Establishes the URLs for both general info and playerStats
-    const playerInfoURL = `https://balldontlie.io/api/v1/players/${playerID}`;
-    const playerStatsURL = `https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerID}`;
-
+    // const playerInfoURL = `https://balldontlie.io/api/v1/players/${playerID}`;
+    const playerStatsURL = `https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerID}`; //Change this to below
+    const apiUrl = process.env.NODE_ENV === 'production' ? '/playerInfo' : 'http://localhost:8000/playerInfo';
     //Gets general info (name, height, position, team, etc.)
-    const fetchInfo = fetch(playerInfoURL).then(response => {
+    const fetchInfo = fetch(apiUrl, {
+        headers: {
+            playerId: playerID
+        }
+    }).then(response => {
         if (!response.ok) {
+            console.log(response);
             throw new Error('Error fetching player information');
         }
         return response.json();
     });
 
     //Gets stats (points, rebounds, assits, etc.)
-    const fetchStats = fetch(playerStatsURL).then(response => {
+    const fetchStats = fetch(playerStatsURL, {
+        headers: {
+            "Access-Control-Allow-Origin": "*" //Change this to above
+        }
+    }).then(response => {
         if (!response.ok){
             throw new Error('Error fetching player stats');
         }

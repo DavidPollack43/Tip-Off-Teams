@@ -1,40 +1,23 @@
 {
-  "name": "tipoffteams",
+  "name": "cors_proxy",
   "version": "1.0.0",
-  "description": "## Project Name: Tip-Off Teams By *David Pollack*",
+  "description": "",
   "main": "index.js",
-  "browserslist": [
-    "defaults"
-  ],
-  "scripts": {
-    "start": "webpack --watch --mode=development",
-    "build": "webpack --mode=production"
+  "engines": {
+    "node": "16.x"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DavidPollack43/Tip-Off-Teams.git"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm install",
+    "start": "node index.js"
   },
   "keywords": [],
-  "author": "David Pollack",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DavidPollack43/Tip-Off-Teams/issues"
-  },
-  "homepage": "https://github.com/DavidPollack43/Tip-Off-Teams#readme",
   "dependencies": {
-    "@babel/core": "^7.22.19",
-    "@babel/preset-env": "^7.22.15",
-    "babel-loader": "^9.1.3",
-    "core-js": "^3.32.2",
-    "css-loader": "^6.8.1",
-    "mini-css-extract-plugin": "^2.7.6",
-    "regenerator-runtime": "^0.14.0",
-    "sass": "^1.67.0",
-    "sass-loader": "^13.3.2",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
-  },
-  "devDependencies": {
-    "file-loader": "^6.2.0"
+    "axios": "^1.3.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
   }
 }
