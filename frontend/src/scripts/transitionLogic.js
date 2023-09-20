@@ -10,6 +10,9 @@ function logoClickHandler(event) {
 
     teamLogos.forEach(l => l.classList.remove('enlarged-logo')); //Housekeeping step, make sure no other enlarged-logo's exist
 
+    teamLogos.forEach(logo => {
+        logo.style.opacity = "";
+    })
 
     const logoElement = event.currentTarget;
     // Make a clone node. Why? This is because if you don't then you move the original 
