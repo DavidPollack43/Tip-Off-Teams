@@ -132,4 +132,44 @@ export const VictorWembanyama = {
         "fg3_pct": 0.275,
         "ft_pct": 0.83
     }
+
+
+    
+}
+
+export const ChetHolmgrem = {
+    playerDetails: {
+        "id": 111116,
+        "first_name": "Chet",
+        "last_name": "Holmgrem",
+        "height_feet": 7,
+        "height_inches": 0,
+        "team": {
+            "id": 21,
+            "abbreviation": "OKC",
+            "city": "Oklahoma City",
+            "conference": "West",
+            "division": "Northwest",
+            "full_name": "Oklahoma City Thunder",
+            "name": "Thunder"
+        },
+        "weight_pounds": 195
+    },
+    playerStats: {
+        "games_played": 32, 
+        "player_id": 111116, 
+        "season": 2022,
+        "pts": 14.1,
+        "ast": 1.9,
+        "reb": 9.9,
+        "stl": 0.8,
+        "blk": 3.7,
+        "turnover": 1.9,
+        "fg_pct": 0.607,
+        "fg3_pct": 0.390,
+        "ft_pct": 0.72
+    }
+
+
+    
 }
