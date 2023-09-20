@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const path = require('path');
 
 if (process.env.NODE_ENV === 'development') {
   require('dotenv').config();
@@ -8,6 +9,7 @@ if (process.env.NODE_ENV === 'development') {
 
 const app = express();
 app.use(cors());
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 app.get("/", (req, res) => {
     res.send('Hello world');
