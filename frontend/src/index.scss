@@ -72,3 +72,8 @@ body{
     background-repeat: no-repeat;
     background-position: center;
 }
+
+button{
+    position: relative;
+    z-index: 1000;
+}
