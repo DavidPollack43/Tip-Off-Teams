@@ -17,8 +17,8 @@ async function processTeamData(teamName){
 
             let playerName = `${playerData.player.first_name} ${playerData.player.last_name}`;
 
-            let playerHeight = `${playerData.player.height_feet}'${playerData.player.height_inches}`;
-            let playerWeight = playerData.player.weight_pounds;
+            // let playerHeight = `${playerData.player.height_feet}'${playerData.player.height_inches}`;
+            // let playerWeight = playerData.player.weight_pounds;
 
             let playerPPG = playerData.stats.pts;
             let playerAPG = playerData.stats.ast;
