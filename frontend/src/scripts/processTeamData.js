@@ -5,6 +5,15 @@ import { teamStartingFive } from './data/playerMapping.js';
 // This function will get player data based on the team selected
 async function processTeamData(teamName){
 
+    const teamStatsDiv = document.querySelector(".team-stats");
+
+    const name = teamName;
+
+    const nameOfTeam = document.createElement('h2');
+    nameOfTeam.textContent = teamName;
+    nameOfTeam.classList.add('team-name');
+    teamStatsDiv.appendChild(nameOfTeam);
+
     //Goes to playerMapping.js, gets the array of player id's based on teamName
     const teamData = teamStartingFive[teamName];
     // Gets player stat divs to put in data
