@@ -20,13 +20,20 @@ app.get("/", (req, res) => {
 // );
 
 app.get("/playerInfo", (req, res) => {
-  console.log(req.headers.playerid);
     axios.get(`https://balldontlie.io/api/v1/players/${req.headers.playerid}`)
     .then(data => {
       console.log(data.data)
       res.send(data.data)})
   } 
 );
+
+app.get("/playerStats", (req, res) => {
+  axios.get(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${req.headers.playerid}`)
+    .then(data => {
+      console.log(data.data);
+      res.send(data.data);
+    })
+})
 
 //Another get for player data like one above
 
