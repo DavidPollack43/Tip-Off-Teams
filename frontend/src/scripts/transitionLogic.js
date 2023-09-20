@@ -104,43 +104,60 @@ function selectTeam(){
 
 function reset(){
     const clonedElement = document.querySelector(".cloned-team-logo");
-    if (clonedElement){
-        clonedElement.remove();
-    }
-
-    const playerStatDivs = document.querySelectorAll(".player-stats");
-    playerStatDivs.forEach(div => {
-        while (div.firstChild){
-            div.removeChild(div.firstChild);
-        }
-    });
-
-    const teamNameEle = document.querySelector(".team-name");
-    if(teamNameEle){
-        teamNameEle.remove();
-    }
-
     const teamLogos = document.querySelectorAll(".team-logo");
     const selectTeamEle = document.querySelector("h2");
-
-    teamLogos.forEach(logo =>{
-        logo.classList.remove('dissapear');
-        logo.classList.remove('fade-out');
-        logo.style.cursor = "pointer";
-        logo.addEventListener("click", logoClickHandler);
-    });
-
-    if (selectTeamEle){
-        selectTeamEle.classList.remove("fade-out");
-    };
-
     const teamPage = document.querySelector(".team-page");
+
+    if (clonedElement){
+        clonedElement.style.transition = "opacity 1s ease-out";
+        clonedElement.style.opacity = "1";
+        setTimeout(() => {
+            clonedElement.style.opacity = "0";
+            setTimeout(() => {
+                clonedElement.remove();
+            }, 500)
+        }, 250)
+    }
+
     if(teamPage){
         teamPage.style.opacity = "0";
         setTimeout(() => {
             teamPage.style.display = "none";
-        }, 500);
+        }, 1000);
     }
+
+    setTimeout(() => {
+        const playerStatDivs = document.querySelectorAll(".player-stats");
+        playerStatDivs.forEach(div => {
+            while (div.firstChild){
+                div.removeChild(div.firstChild);
+            }
+        });
+
+        const teamNameEle = document.querySelector(".team-name");
+        if(teamNameEle){
+            teamNameEle.remove();
+        }
+
+        teamLogos.forEach(logo =>{
+            logo.classList.remove('dissapear');
+            logo.style.opacity = "0";
+            setTimeout(() => {
+                logo.style.opacity = "1";
+            }, 50)
+            logo.classList.remove('fade-out');
+            logo.style.cursor = "pointer";
+            logo.addEventListener("click", logoClickHandler);
+        });
+
+        if (selectTeamEle){
+            selectTeamEle.style.opacity = "0";
+            setTimeout(() => {
+                selectTeamEle.style.opacity = "1";
+            }, 50);
+            selectTeamEle.classList.remove("fade-out");
+        };
+    }, 1000)
 }
 
 export default selectTeam;

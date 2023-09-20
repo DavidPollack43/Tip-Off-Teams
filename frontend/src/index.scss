@@ -43,6 +43,7 @@
         align-items: center;
         cursor: pointer;
         max-height: 100vh;
+        transition: opacity 1s ease-out;
 
 
         img{
@@ -63,6 +64,7 @@ h1{
 }
 h2{
     font-family: monospace;
+    transition: opacity 1s ease-out;
 }
 
 // Changes the background image so that it covers the screen, is one full image, and at the center
