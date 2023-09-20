@@ -14,13 +14,76 @@ async function processTeamData(teamName){
         for(let i = 0; i < 5; i++){
             let playerID = teamData[i];
             let playerData = await fetchPlayerData(playerID);
+
             let playerName = `${playerData.player.first_name} ${playerData.player.last_name}`;
+
+            let playerHeight = `${playerData.player.height_feet}'${playerData.player.height_inches}`;
+            let playerWeight = playerData.player.weight_pounds;
+
+            let playerPPG = playerData.stats.pts;
+            let playerAPG = playerData.stats.ast;
+            let playerRPG = playerData.stats.reb;
+            let playerSPG = playerData.stats.stl;
+            let playerBPG = playerData.stats.blk;
+            let playerTPG = playerData.stats.turnover;
+            let playerFG = playerData.stats.fg_pct;
+            let playerTFG = playerData.stats.fg3_pct;
 
             const nameElement = document.createElement('h2');
             nameElement.textContent = playerName;
             nameElement.classList.add('player-name');
 
+            // const heightElement = document.createElement('p');
+            // heightElement.textContent = playerHeight;
+            // heightElement.classList.add('player-attribute');
+
+            // const weightElement = document.createElement('p');
+            // weightElement.textContent = playerWeight;
+            // weightElement.classList.add('player-attribute');
+
+            const ppgElement = document.createElement('p');
+            ppgElement.textContent = `${playerPPG} ppg`;
+            ppgElement.classList.add('player-attribute');
+
+            const apgElement = document.createElement('p');
+            apgElement.textContent = `${playerAPG} apg`;
+            apgElement.classList.add('player-attribute');
+
+            const rpgElement = document.createElement('p');
+            rpgElement.textContent = `${playerRPG} rpg`;
+            rpgElement.classList.add('player-attribute');
+
+            const spgElement = document.createElement('p');
+            spgElement.textContent = `${playerSPG} spg`;
+            spgElement.classList.add('player-attribute');
+
+            const bpgElement = document.createElement('p');
+            bpgElement.textContent = `${playerBPG} bpg`;
+            bpgElement.classList.add('player-attribute');
+
+            const tpgElement = document.createElement('p');
+            tpgElement.textContent = `${playerTPG} tpg`;
+            tpgElement.classList.add('player-attribute');
+
+            const fgElement = document.createElement('p');
+            fgElement.textContent = `${playerFG} fg%`;
+            fgElement.classList.add('player-attribute');
+
+            const tfgElement = document.createElement('p');
+            tfgElement.textContent = `${playerTFG} 3fg%`;
+            tfgElement.classList.add('player-attribute');
+
             playerStatDivs[i].appendChild(nameElement);
+            // playerStatDivs[i].appendChild(heightElement);
+            // playerStatDivs[i].appendChild(weightElement);
+            playerStatDivs[i].appendChild(ppgElement);
+            playerStatDivs[i].appendChild(apgElement);
+            playerStatDivs[i].appendChild(rpgElement);
+            playerStatDivs[i].appendChild(spgElement);
+            playerStatDivs[i].appendChild(bpgElement);
+            playerStatDivs[i].appendChild(tpgElement);
+            playerStatDivs[i].appendChild(fgElement);
+            playerStatDivs[i].appendChild(tfgElement);
         }
     }else{
         console.error(`No data found for team: ${teamName}`);
@@ -44,8 +107,6 @@ async function fetchPlayerData(playerID){
 
     //IF not a rookie: 
     //Establishes the URLs for both general info and playerStats
-    // const playerInfoURL = `https://balldontlie.io/api/v1/players/${playerID}`;
-    // const playerStatsURL = `https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerID}`; //Change this to below
     const apiUrl = process.env.NODE_ENV === 'production' ? '/playerInfo' : 'http://localhost:8000/playerInfo';
     const statsURL = process.env.NODE_ENV === 'production' ? '/playerStats' : 'http://localhost:8000/playerStats'
     //Gets general info (name, height, position, team, etc.)
