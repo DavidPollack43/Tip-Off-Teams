@@ -4959,5 +4959,8 @@ players_json_list = [
 # Convert to JSON string
 players_json_str = json.dumps(players_json_list, indent=4)
 
-print(players_json_list)
-print(len(players_json_list))
+with open('players.json', 'w') as json_file:
+    json.dump(players_json_list, json_file, indent=4)
+
+# print(players_json_list)
+# print(len(players_json_list))

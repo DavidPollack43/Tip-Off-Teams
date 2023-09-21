@@ -1,6 +1,8 @@
 import { async } from 'regenerator-runtime';
 import * as rookies from './data/rookieSim.js';
 import { teamStartingFive } from './data/playerMapping.js';
+import playersList from './data/players.json';
+import teamImageData from './data/playerTeam.json'
 
 // This function will get player data based on the team selected
 async function processTeamData(teamName){
@@ -18,6 +20,8 @@ async function processTeamData(teamName){
     const teamData = teamStartingFive[teamName];
     // Gets player stat divs to put in data
     const playerStatDivs = document.querySelectorAll(".player-stats");
+
+    const positions = ["PG", "SG", "SF", "PF", "C"];
     //Will for now, put in each box a players name.
     if (teamData) {
         for(let i = 0; i < 5; i++){
@@ -25,9 +29,50 @@ async function processTeamData(teamName){
             let playerData = await fetchPlayerData(playerID);
 
             let playerName = `${playerData.player.first_name} ${playerData.player.last_name}`;
+            let playerNamePos = `${playerData.player.first_name} ${playerData.player.last_name} (${positions[i]})`
+
+            const teamFullName = playerData.player.team.full_name;
+
+            let teamID = teamImageData[teamFullName] && teamImageData[teamFullName].TeamID;
+            if (!teamID) {
+                console.error(`No TeamID found for team: ${teamFullName}`);
+                return;  // or handle this error as you see fit
+            }
 
             // let playerHeight = `${playerData.player.height_feet}'${playerData.player.height_inches}`;
             // let playerWeight = playerData.player.weight_pounds;
+
+            
+            let playerPhotoData = playersList.find(player => player.player_index_full_name == playerName);
+            let imageURL;
+            
+            const playerImageElement = document.createElement('img');
+
+            let nonNBAStats;
+            let imagePlayerID;
+            if (playerPhotoData) {
+                imagePlayerID = playerPhotoData.player_index_id;
+                if (playerName === "Jakob Poeltl"){
+                    teamID = 1610612759;
+                }
+                imageURL = `https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/${teamID}/2022/260x190/${imagePlayerID}.png`
+            } else {
+                imageURL = "https://static.thenounproject.com/png/354384-200.png"
+                playerImageElement.classList.add('fallback-image');
+                nonNBAStats = "Non NBA Stats"
+            }
+            
+
+            playerImageElement.src = imageURL;
+            playerImageElement.alt = playerName;
+            playerImageElement.classList.add('player-image');
+
+            let statWarning;
+            if(nonNBAStats){
+                statWarning = document.createElement('p');
+                statWarning.textContent = nonNBAStats;
+                statWarning.classList.add('stat-warning');
+            }
 
             let playerPPG = playerData.stats.pts;
             let playerAPG = playerData.stats.ast;
@@ -39,7 +84,7 @@ async function processTeamData(teamName){
             let playerTFG = playerData.stats.fg3_pct;
 
             const nameElement = document.createElement('h2');
-            nameElement.textContent = playerName;
+            nameElement.textContent = playerNamePos;
             nameElement.classList.add('player-name');
 
             // const heightElement = document.createElement('p');
@@ -82,6 +127,7 @@ async function processTeamData(teamName){
             tfgElement.textContent = `${playerTFG} 3fg%`;
             tfgElement.classList.add('player-attribute');
 
+            playerStatDivs[i].appendChild(playerImageElement);
             playerStatDivs[i].appendChild(nameElement);
             // playerStatDivs[i].appendChild(heightElement);
             // playerStatDivs[i].appendChild(weightElement);
@@ -93,6 +139,9 @@ async function processTeamData(teamName){
             playerStatDivs[i].appendChild(tpgElement);
             playerStatDivs[i].appendChild(fgElement);
             playerStatDivs[i].appendChild(tfgElement);
+            if (statWarning){
+                playerStatDivs[i].appendChild(statWarning);
+            }
         }
     }else{
         console.error(`No data found for team: ${teamName}`);

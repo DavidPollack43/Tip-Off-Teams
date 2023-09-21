@@ -63,6 +63,20 @@
                 padding-left: 5%;
                 font-size: large;
                 font-weight: bold;
+                margin-top: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
+            img{
+                display: block;
+                margin: 0 auto;
+            }
+            .stat-warning{
+                color: red;
+                font-family: monospace;
+            }
+
+            .player-image.fallback-image{
+                height: 190px;
             }
         }
 }

@@ -80,7 +80,7 @@ function logoClickHandler(event) {
                 setTimeout(() =>{
                     teamPage.style.opacity = "1";
                 }, 50);
-            }, 2000)
+            }, 3000)
         }, 0)
     }, 500);
 
@@ -98,7 +98,7 @@ function logoClickHandler(event) {
     resetButton.style.display = "block";
     setTimeout(() => {
         resetButton.style.opacity = "1";
-    }, 2500);
+    }, 3500);
 }
 
 // This funciton will let the user click on a logo to go to that teams page, as well as put
