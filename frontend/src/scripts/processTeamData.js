@@ -96,35 +96,35 @@ async function processTeamData(teamName, retryCount = 3){
             // weightElement.classList.add('player-attribute');
 
             const ppgElement = document.createElement('p');
-            ppgElement.textContent = `${playerPPG} ppg`;
+            ppgElement.textContent = `${playerPPG} PPG`;
             ppgElement.classList.add('player-attribute');
 
             const apgElement = document.createElement('p');
-            apgElement.textContent = `${playerAPG} apg`;
+            apgElement.textContent = `${playerAPG} APG`;
             apgElement.classList.add('player-attribute');
 
             const rpgElement = document.createElement('p');
-            rpgElement.textContent = `${playerRPG} rpg`;
+            rpgElement.textContent = `${playerRPG} RPG`;
             rpgElement.classList.add('player-attribute');
 
             const spgElement = document.createElement('p');
-            spgElement.textContent = `${playerSPG} spg`;
+            spgElement.textContent = `${playerSPG} SPG`;
             spgElement.classList.add('player-attribute');
 
             const bpgElement = document.createElement('p');
-            bpgElement.textContent = `${playerBPG} bpg`;
+            bpgElement.textContent = `${playerBPG} BPG`;
             bpgElement.classList.add('player-attribute');
 
             const tpgElement = document.createElement('p');
-            tpgElement.textContent = `${playerTPG} tpg`;
+            tpgElement.textContent = `${playerTPG} TPG`;
             tpgElement.classList.add('player-attribute');
 
             const fgElement = document.createElement('p');
-            fgElement.textContent = `${playerFG} fg%`;
+            fgElement.textContent = `${playerFG} FG%`;
             fgElement.classList.add('player-attribute');
 
             const tfgElement = document.createElement('p');
-            tfgElement.textContent = `${playerTFG} 3fg%`;
+            tfgElement.textContent = `${playerTFG} 3FG%`;
             tfgElement.classList.add('player-attribute');
 
             playerStatDivs[i].appendChild(playerImageElement);

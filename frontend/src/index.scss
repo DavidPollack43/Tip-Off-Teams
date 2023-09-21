@@ -81,9 +81,42 @@ body{
     background-position: center;
 }
 
+.stats-legend{
+    position: absolute;
+    top: 10px;
+    left: 25%;
+    background-color: rgba(255,151,0,1);
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    width: 700px;
+    z-index: 5;
+    overflow-y: auto;
+
+    h3{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .stat-detail{
+        margin-bottom: 15px;
+
+        ul{
+            margin-top: 5px;
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+
+        li{
+            margin-bottom: 5px;
+        }
+    }
+
+}
+
 // Button styling was gotten from: 
 // https://codepen.io/yuhomyan/pen/OJMejWJ
-button{
+#resetButton{
     display: none;
     position: absolute;
     top: 27%;
@@ -105,15 +138,15 @@ button{
     cursor: pointer;
 }
 
-button span {
+#resetButton span {
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
 }
 
-button:before,
-button:after {
+#resetButton:before,
+#resetButton:after {
   position: absolute;
   content: "";
   right: 0;
@@ -127,31 +160,31 @@ button:after {
   transition: all 0.3s ease;
 }
 
-button:before{
+#resetButton:before{
     height: 0%;
     width: 2px;
 }
 
-button:after {
+#resetButton:after {
     width: 0%;
     height: 2px;
 }
 
-button:hover{
+#resetButton:hover{
     color: rgba(251,75,2,1);
     background: transparent;
 }
 
-button:hover:before {
+#resetButton:hover:before {
     height: 100%;
 }
 
-button:hover:after {
+#resetButton:hover:after {
     width: 100%;
 }
 
-button span:before,
-button span:after {
+#resetButton span:before,
+#resetButton span:after {
   position: absolute;
   content: "";
   left: 0;
@@ -165,21 +198,21 @@ button span:after {
   transition: all 0.3s ease;
 }
 
-button span:before {
+#resetButton span:before {
     width: 2px;
     height: 0%;
 }
 
-button span:after {
+#resetButton span:after {
     height: 2px;
     width: 0%;
 }
 
-button span:hover:before {
+#resetButton span:hover:before {
     height: 100%;
 }
 
-button span:hover:after {
+#resetButton span:hover:after {
     width: 100%;
 }
 
@@ -200,4 +233,17 @@ button span:hover:after {
 
 .social-icons a:hover{
     color: black;
+}
+
+#legend-toggle-button {
+    position: absolute;
+    top: 2%;
+    left: 25%;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 6;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }

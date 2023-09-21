@@ -18,6 +18,9 @@ function logoClickHandler(event) {
 
     selectTeamELe.style.opacity = "";
 
+    const legendToggleButton = document.getElementById("legend-toggle-button");
+    const legendDiv = document.querySelector(".stats-legend");
+
     const logoElement = event.currentTarget;
     // Make a clone node. Why? This is because if you don't then you move the original 
     // logo. This messes up the flex box and shifts every logo. By making a clone
@@ -93,6 +96,16 @@ function logoClickHandler(event) {
     //Passing the teamName from the alt as a argument to processTeamData function
     const teamName = event.target.alt;
     processTeamData(teamName);
+
+    legendToggleButton.style.display = "block";
+
+    setTimeout(() => {
+        legendToggleButton.style.opacity = "1";
+    }, 3500);
+
+    legendToggleButton.removeEventListener("click", toggleLegendDisplay);
+
+    legendToggleButton.addEventListener('click', toggleLegendDisplay);
 
     const resetButton = document.getElementById("resetButton");
     resetButton.style.display = "block";
@@ -174,10 +187,27 @@ function reset(){
     }, 1000)
 
     const resetButton = document.getElementById("resetButton");
+    const legendToggleButton = document.getElementById("legend-toggle-button")
+    const legendDiv = document.querySelector(".stats-legend");
+
     resetButton.style.opacity = "0";
+    legendToggleButton.style.opacity = "0";
     setTimeout(() => {
         resetButton.style.display = "none";
+        legendToggleButton.style.display = "none";
+        legendDiv.style.display = "none";
     }, 1000);
+}
+
+function toggleLegendDisplay() {
+    const legendDiv = document.querySelector(".stats-legend");
+    if (legendDiv.style.display == "none" || !legendDiv.style.display) {
+        console.log("clicked and should show");
+        legendDiv.style.display = "block";
+    } else {
+        console.log("clicked but should not display");
+        legendDiv.style.display = "none";
+    }
 }
 
 export default selectTeam;
