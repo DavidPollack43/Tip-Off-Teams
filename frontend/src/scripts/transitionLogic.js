@@ -190,6 +190,8 @@ function reset(){
     const legendToggleButton = document.getElementById("legend-toggle-button")
     const legendDiv = document.querySelector(".stats-legend");
 
+    legendToggleButton.querySelector("span").textContent = "Stat Info";
+
     resetButton.style.opacity = "0";
     legendToggleButton.style.opacity = "0";
     setTimeout(() => {
@@ -200,13 +202,14 @@ function reset(){
 }
 
 function toggleLegendDisplay() {
+    const legendToggleButton = document.getElementById("legend-toggle-button");
     const legendDiv = document.querySelector(".stats-legend");
     if (legendDiv.style.display == "none" || !legendDiv.style.display) {
-        console.log("clicked and should show");
         legendDiv.style.display = "block";
+        legendToggleButton.querySelector("span").textContent = "Close";
     } else {
-        console.log("clicked but should not display");
         legendDiv.style.display = "none";
+        legendToggleButton.querySelector("span").textContent = "Stat Info"
     }
 }
 
