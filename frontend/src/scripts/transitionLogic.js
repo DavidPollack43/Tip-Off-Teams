@@ -4,6 +4,8 @@ let teamLogos;
 
 function logoClickHandler(event) {
 
+    let selectTeamELe = document.querySelector('h2');
+
     if (!event.target.closest('.team-logo')){
         return;
     }
@@ -13,6 +15,8 @@ function logoClickHandler(event) {
     teamLogos.forEach(logo => {
         logo.style.opacity = "";
     })
+
+    selectTeamELe.style.opacity = "";
 
     const logoElement = event.currentTarget;
     // Make a clone node. Why? This is because if you don't then you move the original 
