@@ -74,6 +74,7 @@ function logoClickHandler(event) {
                 clone.style.top = "40px";
                 clone.style.left = "60px";
                 clone.style.transform = "scale(2)";
+                clone.style.cursor = "default";
                 const teamPage = document.querySelector(".team-page");
                 teamPage.style.display = "block";
                 setTimeout(() =>{
