@@ -7,7 +7,7 @@ By *David Pollack*
 
 The project aims to provide an interactive and visually compelling overview of NBA team starting lineups for the 2023-2024 season. Users will be initially presented with a clean and well-arranged landing page showcasing the logos of all NBA teams. Upon selecting a team logo, they'll be transitioned smoothly to a dedicated team page. This page will be segmented into five distinct sections, each representing a starter from the basketball team. Within these sections, a semi-transparent/faded image of the player will be presented, with the player's stats cleanly overlaying or displayed beside the image.
 
-Below is the MVP (minmal viable product) that I would be satisfied and proud of for my first JS project in this course. If I am able to be ahead of schedule on the project, then I would add more features. These features could include: 
+Above is the MVP (minmal viable product) that I would be satisfied and proud of for my first JS project in this course. If I am able to be ahead of schedule on the project, then I would add more features. These features could include: 
 
 * Team Stats on each page. These stats could also be compared to every other team in the NBA.
 * A short blurb by me about each team’s previous season and expectations for next season.
