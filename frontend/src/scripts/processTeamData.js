@@ -119,7 +119,7 @@ async function fetchPlayerData(playerID){
     const apiUrl = process.env.NODE_ENV === 'production' ? '/playerInfo' : 'http://localhost:8000/playerInfo';
     const statsURL = process.env.NODE_ENV === 'production' ? '/playerStats' : 'http://localhost:8000/playerStats'
     //Gets general info (name, height, position, team, etc.)
-    const fetchInfo = fetch(apiUrl, {
+    const fetchInfo = await fetch(apiUrl, {
         headers: {
             playerId: playerID
         }
@@ -132,7 +132,7 @@ async function fetchPlayerData(playerID){
     });
 
     //Gets stats (points, rebounds, assits, etc.)
-    const fetchStats = fetch(statsURL, {
+    const fetchStats = await fetch(statsURL, {
         headers: {
            playerId: playerID
         }
