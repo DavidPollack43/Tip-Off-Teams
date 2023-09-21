@@ -171,8 +171,10 @@ async function fetchPlayerData(playerID){
 
     //IF not a rookie: 
     //Establishes the URLs for both general info and playerStats
-    const apiUrl = process.env.NODE_ENV === 'production' ? '/playerInfo' : 'http://localhost:8000/playerInfo';
-    const statsURL = process.env.NODE_ENV === 'production' ? '/playerStats' : 'http://localhost:8000/playerStats'
+    // const apiUrl = process.env.NODE_ENV === 'production' ? '/playerInfo' : 'http://localhost:8000/playerInfo';
+    // const statsURL = process.env.NODE_ENV === 'production' ? '/playerStats' : 'http://localhost:8000/playerStats'
+    const apiUrl = "https://tip-off-teams.onrender.com/playerInfo";
+    const statsURL = "https://tip-off-teams.onrender.com/playerStats";
     //Gets general info (name, height, position, team, etc.)
     const fetchInfo = await fetch(apiUrl, {
         headers: {
