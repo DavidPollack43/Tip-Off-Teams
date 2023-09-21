@@ -92,6 +92,12 @@ function logoClickHandler(event) {
     //Passing the teamName from the alt as a argument to processTeamData function
     const teamName = event.target.alt;
     processTeamData(teamName);
+
+    const resetButton = document.getElementById("resetButton");
+    resetButton.style.display = "block";
+    setTimeout(() => {
+        resetButton.style.opacity = "1";
+    }, 2500);
 }
 
 // This funciton will let the user click on a logo to go to that teams page, as well as put
@@ -165,6 +171,12 @@ function reset(){
             selectTeamEle.classList.remove("fade-out");
         };
     }, 1000)
+
+    const resetButton = document.getElementById("resetButton");
+    resetButton.style.opacity = "0";
+    setTimeout(() => {
+        resetButton.style.display = "none";
+    }, 1000);
 }
 
 export default selectTeam;
