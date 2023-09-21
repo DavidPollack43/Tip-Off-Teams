@@ -5,7 +5,7 @@ import playersList from './data/players.json';
 import teamImageData from './data/playerTeam.json'
 
 // This function will get player data based on the team selected
-async function processTeamData(teamName){
+async function processTeamData(teamName, retryCount = 3){
 
     const teamStatsDiv = document.querySelector(".team-stats");
 
@@ -144,7 +144,13 @@ async function processTeamData(teamName){
             }
         }
     }else{
-        console.error(`No data found for team: ${teamName}`);
+        console.error(`Attempt ${4 - retryCount}: No data found for team: ${teamName}`);
+
+        if (retryCount > 1){
+            setTimeout(() => processTeamData(teamName, retryCount - 1), 1000); //retry after 1 second
+        }else{
+            console.error("Final attempt failed. Could not fetch data for team: ", teamName);
+        }
     }
 }
 
