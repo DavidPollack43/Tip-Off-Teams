@@ -3,6 +3,10 @@
 ## Project Name: Tip-Off Teams
 By *David Pollack*
 
+## Instructions:
+
+Select a team to view their starters/stats. Once a team is selected, you can view their stats on the screen. Any questions about stats can be answered by clicked the Stats Info button on the top of the screen. Hit the back button to get back to team selection. 
+
 ## Project Overview:
 
 The project aims to provide an interactive and visually compelling overview of NBA team starting lineups for the 2023-2024 season. Users will be initially presented with a clean and well-arranged landing page showcasing the logos of all NBA teams. Upon selecting a team logo, they'll be transitioned smoothly to a dedicated team page. This page will be segmented into five distinct sections, each representing a starter from the basketball team. Within these sections, a semi-transparent/faded image of the player will be presented, with the player's stats cleanly overlaying or displayed beside the image.
