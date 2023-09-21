@@ -241,9 +241,98 @@ body{
     left: 25%;
     background: none;
     border: none;
-    font-size: 20px;
     cursor: pointer;
     z-index: 6;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+
+    background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+
+    width: 130px;
+    height: 40px;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    font-weight: 500;
+}
+
+#legend-toggle-button span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#legend-toggle-button:before,
+#legend-toggle-button:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: rgba(251,75,2,1);
+  box-shadow:
+   -7px -7px 20px 0px rgba(255,255,255,.9),
+   -4px -4px 5px 0px rgba(255,255,255,.9),
+   7px 7px 20px 0px rgba(0,0,0,.2),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+  transition: all 0.3s ease;
+}
+
+
+#legend-toggle-button:before{
+    height: 0%;
+    width: 2px;
+}
+
+#legend-toggle-button:after {
+    width: 0%;
+    height: 2px;
+}
+
+#legend-toggle-button:hover{
+    color: rgba(251,75,2,1);
+    background: transparent;
+}
+
+#legend-toggle-button:hover:before {
+    height: 100%;
+}
+
+#legend-toggle-button:hover:after {
+    width: 100%;
+}
+
+#legend-toggle-button span:before,
+#legend-toggle-button span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: rgba(251,75,2,1);
+  box-shadow:
+   -7px -7px 20px 0px rgba(255,255,255,.9),
+   -4px -4px 5px 0px rgba(255,255,255,.9),
+   7px 7px 20px 0px rgba(0,0,0,.2),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+  transition: all 0.3s ease;
+}
+
+#legend-toggle-button span:before {
+    width: 2px;
+    height: 0%;
+}
+
+#legend-toggle-button span:after {
+    height: 2px;
+    width: 0%;
+}
+
+#legend-toggle-button span:hover:before {
+    height: 100%;
+}
+
+#legend-toggle-button span:hover:after {
+    width: 100%;
 }
