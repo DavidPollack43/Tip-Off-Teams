@@ -54,6 +54,40 @@ async function processTeamData(teamName, retryCount = 3){
                 imagePlayerID = playerPhotoData.player_index_id;
                 if (playerName === "Jakob Poeltl"){
                     teamID = 1610612759;
+                } else if (playerName === "Deandre Ayton"){
+                    teamID = 1610612756;
+                } else if (playerName === "Jrue Holiday"){
+                    teamID = 1610612749;
+                } else if (playerName === "Kristaps Porzingis"){
+                    teamID = 1610612764;
+                } else if (playerName === "James Harden"){
+                    teamID = 1610612755; 
+                } else if (playerName === "Damian Lillard"){
+                    teamID = 1610612757; 
+                } else if (playerName === "Malik Beasley"){
+                    teamID = 1610612747;
+                } else if (playerName === "Bradley Beal"){
+                    teamID = 1610612764;
+                } else if (playerName === "Jusuf Nurkic"){
+                    teamID = 1610612757;
+                } else if (playerName === "Nicolas Batum"){
+                    teamID = 1610612746;
+                } else if (playerName === "John Collins"){
+                    teamID = 1610612737;
+                } else if (playerName === "Tyus Jones"){
+                    teamID = 1610612763;
+                } else if (playerName === "Dennis Schroder"){
+                    teamID = 1610612747;
+                }else if ( playerName === "Josh Richardson"){
+                    teamID = 1610612740;
+                } else if ( playerName === "Marcus Smart"){
+                    teamID = 1610612738;
+                } else if ( playerName === "Fred VanVleet"){
+                    teamID = 1610612761;
+                } else if ( playerName === "Dillon Brooks"){
+                    teamID = 1610612763;
+                } else if (playerName === "Chris Paul"){
+                    teamID = 1610612756;
                 }
                 imageURL = `https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/${teamID}/2022/260x190/${imagePlayerID}.png`
             } else {
@@ -171,10 +205,10 @@ async function fetchPlayerData(playerID){
 
     //IF not a rookie: 
     //Establishes the URLs for both general info and playerStats
-    // const apiUrl = process.env.NODE_ENV === 'production' ? '/playerInfo' : 'http://localhost:8000/playerInfo';
-    // const statsURL = process.env.NODE_ENV === 'production' ? '/playerStats' : 'http://localhost:8000/playerStats'
-    const apiUrl = "https://tip-off-teams.onrender.com/playerInfo";
-    const statsURL = "https://tip-off-teams.onrender.com/playerStats";
+    const apiUrl = process.env.NODE_ENV === 'production' ? '/playerInfo' : 'http://localhost:8000/playerInfo'; //For local testing
+    const statsURL = process.env.NODE_ENV === 'production' ? '/playerStats' : 'http://localhost:8000/playerStats' //For local testing
+    // const apiUrl = "https://tip-off-teams.onrender.com/playerInfo"; //for online
+    // const statsURL = "https://tip-off-teams.onrender.com/playerStats"; //for online
     //Gets general info (name, height, position, team, etc.)
     const fetchInfo = await fetch(apiUrl, {
         headers: {
