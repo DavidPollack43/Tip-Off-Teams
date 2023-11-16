@@ -173,3 +173,37 @@ export const ChetHolmgrem = {
 
     
 }
+
+export const ScootHenderson = {
+    playerDetails: {
+        "id": 111117,
+        "first_name": "Scoot",
+        "last_name": "Henderson",
+        "height_feet": 6,
+        "height_inches": 2,
+        "team": {
+            "id": 25,
+            "abbreviation": "POR",
+            "city": "Portland",
+            "conference": "West",
+            "division": "Northwest",
+            "full_name": "Portland Trail Blazers",
+            "name": "Trail Blazers"
+        },
+        "weight_pounds": 195
+    },
+    playerStats: {
+        "games_played": 6, 
+        "player_id": 111117, 
+        "season": 2022,
+        "pts": 21.2,
+        "ast": 5.8,
+        "reb": 4.5,
+        "stl": 1.7,
+        "blk": 0.2,
+        "turnover": 2.8,
+        "fg_pct": 0.485,
+        "fg3_pct": 0.471,
+        "ft_pct": 0.71
+    }
+}
