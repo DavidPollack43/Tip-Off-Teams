@@ -37,7 +37,7 @@ function logoClickHandler(event) {
     const teamLogosContainer = document.querySelector('.team-logos');
     const rect = logoElement.getBoundingClientRect();
     const containerRect = teamLogosContainer.getBoundingClientRect();
-    // const computedStyles = window.getComputedStyle(logoElement);
+    const computedStyles = window.getComputedStyle(logoElement);
 
     const originalImage = logoElement.querySelector('img');  // Get the original image
     const clonedImage = clone.querySelector('img');   // Get the cloned image
@@ -47,15 +47,24 @@ function logoClickHandler(event) {
     clonedImage.style.height = originalImage.style.height || 'auto';
     clonedImage.style.maxHeight = originalImage.style.maxHeight || '13.5vh';
 
+    const marginSize = parseFloat(computedStyles.margin);
     
     // Apply initial styles to cloned div
-    clone.style.position = 'absolute';
-    clone.style.top = rect.top + 'px';  // Use the logo's top directly
-    clone.style.left = rect.left + 'px';  // Use the logo's left directly
+    // clone.style.position = 'absolute';
+    // clone.style.margin = computedStyles.margin;
+    // clone.style.top = (rect.top - containerRect.top - marginSize) + 'px';
+    // clone.style.left = (rect.left - containerRect.left - marginSize) + 'px';
+    // clone.style.width = rect.width + 'px';
+    // clone.style.height = rect.height + 'px';
+    clone.style.transform = `translateX(${rect.left}px) translateY(${rect.top}px)`;
     clone.style.width = rect.width + 'px';
     clone.style.height = rect.height + 'px';
+    clone.style.top = '100vh'
+    clone.style.left = '50%'
+
     
     teamLogosContainer.appendChild(clone);
+    
     
     // This will put cloned class on the clone, this is so we can reference it later
     clone.classList.add('cloned');
