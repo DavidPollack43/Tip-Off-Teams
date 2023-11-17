@@ -34,8 +34,10 @@ function logoClickHandler(event) {
     // Get values of the original logo (both dimenstions and styles like margin)
     // Pivitol beacuse the clone image will get the original, huge bloated image 
     // dimenstions/styling before putting it into any flexbox/making it smaller
+    const teamLogosContainer = document.querySelector('.team-logos');
     const rect = logoElement.getBoundingClientRect();
-    const computedStyles = window.getComputedStyle(logoElement);
+    const containerRect = teamLogosContainer.getBoundingClientRect();
+    // const computedStyles = window.getComputedStyle(logoElement);
 
     const originalImage = logoElement.querySelector('img');  // Get the original image
     const clonedImage = clone.querySelector('img');   // Get the cloned image
@@ -45,15 +47,15 @@ function logoClickHandler(event) {
     clonedImage.style.height = originalImage.style.height || 'auto';
     clonedImage.style.maxHeight = originalImage.style.maxHeight || '13.5vh';
 
-    // Apply styles to cloned div
-    clone.style.margin = computedStyles.margin;
+    
+    // Apply initial styles to cloned div
+    clone.style.position = 'absolute';
+    clone.style.top = rect.top + 'px';  // Use the logo's top directly
+    clone.style.left = rect.left + 'px';  // Use the logo's left directly
     clone.style.width = rect.width + 'px';
     clone.style.height = rect.height + 'px';
-    clone.style.top = (rect.top - 10) + 'px'; //Temp fix/Does not work on differing screens
-    clone.style.left = (rect.left + 17) + 'px'; //Temp fix/Does not work on differing screens
-    clone.style.position = 'absolute';
-
-
+    
+    teamLogosContainer.appendChild(clone);
     
     // This will put cloned class on the clone, this is so we can reference it later
     clone.classList.add('cloned');
