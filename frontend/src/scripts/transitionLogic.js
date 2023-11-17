@@ -78,7 +78,7 @@ function logoClickHandler(event) {
         clone.classList.add("enlarged-logo");
         setTimeout(() =>{
             clone.style.top = "calc(50% - 50px)"; // top/left puts the logo in the middle, specific for my screen for now
-            clone.style.left = "calc(50% + 100px)";
+            clone.style.left = "calc(50% + 8vw)";
             clone.style.transform = "translate(-50%, -50%) scale(4)"; // Right now top left corner in middle, puts center of logo in middle and scales it up 4
             teamLogos.forEach(l => l.classList.add('fade-out')); // Makes each logo fade
             selectTeamText.classList.add('fade-out'); //Makes select a team fade
