@@ -15,11 +15,6 @@ app.get("/", (req, res) => {
     res.send('Hello world');
 });
 
-// app.get("/cats", (req, res) => {
-//     axios.get(`https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=${process.env.CAT_API_KEY}`)
-//     .then(data => res.send(data.data));
-//   } 
-// );
 
 app.get("/playerInfo", (req, res) => {
     axios.get(`https://balldontlie.io/api/v1/players/${req.headers.playerid}`)
@@ -39,6 +34,11 @@ app.get("/playerStats", (req, res) => {
 
 //Another get for player data like one above
 
-app.listen(8000, () => {
-  console.log("Listening on port 8000");
+// app.listen(8000, () => {
+//   console.log("Listening on port 8000");
+// });
+
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });
