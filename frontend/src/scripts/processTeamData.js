@@ -22,7 +22,7 @@ async function processTeamData(teamName, retryCount = 3){
     const playerStatDivs = document.querySelectorAll(".player-stats");
 
     const positions = ["PG", "SG", "SF", "PF", "C"];
-    //Will for now, put in each box a players name.
+
     if (teamData) {
         for(let i = 0; i < 5; i++){
             let playerID = teamData[i];
@@ -36,12 +36,8 @@ async function processTeamData(teamName, retryCount = 3){
             let teamID = teamImageData[teamFullName] && teamImageData[teamFullName].TeamID;
             if (!teamID) {
                 console.error(`No TeamID found for team: ${teamFullName}`);
-                return;  // or handle this error as you see fit
+                return; 
             }
-
-            // let playerHeight = `${playerData.player.height_feet}'${playerData.player.height_inches}`;
-            // let playerWeight = playerData.player.weight_pounds;
-
             
             let playerPhotoData = playersList.find(player => player.player_index_full_name == playerName);
             let imageURL;
